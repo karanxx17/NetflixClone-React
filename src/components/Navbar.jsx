@@ -1,29 +1,41 @@
-function Navbar() {
-  return (
-    <nav style={{
-      position:"fixed",
-      top:0,
-      width:"100%",
-      padding:"20px",
-      display:"flex",
-      justifyContent:"space-between",
-      backgroundColor:"black",
-      zIndex:100
-    }}>
-      <h1 style={{color:"red"}}>NETFLIX</h1>
+import { useEffect, useState } from "react";
+import "../styles/netflix.css";
 
-      <div style={{
-      display:"flex",
-      gap:"15px",
-      fontSize:"14px",
-      flexWrap:"wrap"
-    }}>
-      <span>Home</span>
-      <span>TV Shows</span>
-      <span>Movies</span>
-      <span>My List</span>
-     </div>
-    </nav>
+function Navbar() {
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className={`navbar ${show ? "navbar-black" : ""}`}>
+      
+      <img
+        className="navbar-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        alt="Netflix Logo"
+      />
+
+      <div className="navbar-menu">
+        <span>Home</span>
+        <span>TV Shows</span>
+        <span>Movies</span>
+        <span>My List</span>
+      </div>
+
+    </div>
   );
 }
 

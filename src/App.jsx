@@ -14,18 +14,25 @@ import {
 
 function App() {
   return (
-    <div style={{marginTop:"80px"}}>
+    <div style={{background:"#111"}}>
+
       <Navbar />
       <Banner />
-      <Search />
 
-      <MovieRow title="Trending Now" fetchMovies={fetchTrending}/>
-      <MovieRow title="Popular" fetchMovies={fetchPopular}/>
-      <MovieRow title="Top Rated" fetchMovies={fetchTopRated}/>
-      <MovieRow title="Upcoming" fetchMovies={fetchUpcoming}/>
+      <div style={{marginTop:"20px"}}>
+
+        <Search />
+
+        <MovieRow title="Trending Now" fetchMovies={fetchTrending}/>
+        <MovieRow title="Popular" fetchMovies={fetchPopular}/>
+        <MovieRow title="Top Rated" fetchMovies={fetchTopRated}/>
+        <MovieRow title="Upcoming" fetchMovies={fetchUpcoming}/>
+
+      </div>
 
     </div>
-  );
+  )
 }
 
 export default App;
+

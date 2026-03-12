@@ -21,8 +21,15 @@ function Banner() {
         color: "white",
         objectFit: "contain",
         backgroundSize: "cover",
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
         backgroundPosition: "center center",
+        backgroundImage: `
+              linear-gradient(
+                to top,
+                rgba(0,0,0,0.8),
+                rgba(0,0,0,0.3)
+              ),
+              url(https://image.tmdb.org/t/p/original${movie.backdrop_path})
+            `,
       }}
     >
 
@@ -61,9 +68,15 @@ function Banner() {
         </p>
 
       </div>
+      <div style={{
+      height: "7.4rem",
+      backgroundImage:
+        "linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111)"
+    }}/>
 
     </header>
   );
 }
 
 export default Banner;
+
