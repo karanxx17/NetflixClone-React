@@ -7,7 +7,7 @@ The project replicates core Netflix UI features like movie rows, trailers, searc
 
 ## 🚀 Live Demo
 
-🔗 Live Project: https://your-vercel-link.vercel.app
+🔗 Live Project: https://netflixclone-amber-omega.vercel.app
 
 ---
 
