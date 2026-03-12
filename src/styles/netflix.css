@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* This stops the horizontal scrolling completely */
+  width: 100vw;
+}
+
 body{
   background-color:#111;
   font-family:Arial, Helvetica, sans-serif;
@@ -169,26 +180,30 @@ h2{
 }
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 768px){
 
-  h1{
-    font-size:24px;
+@media (max-width: 768px) {
+  .banner {
+    height: 300px !important; /* Forces a smaller banner on phones */
   }
 
-  h2{
-    font-size:18px;
+  .banner__title {
+    font-size: 1.5rem !important; /* Smaller text */
   }
 
-  .moviePoster{
-    max-height:150px;
+  .banner__description {
+    font-size: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Shows only 3 lines of text so it doesn't overflow */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .row{
-    padding:10px;
+  .row {
+    padding: 10px 0;
+    margin-left: 10px;
   }
 
-  input{
-    width:100%;
+  .movie-card-container {
+    width: 100px !important; /* Shrinks posters so they fit the screen width */
   }
-
 }
