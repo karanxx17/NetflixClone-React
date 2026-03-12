@@ -1,0 +1,57 @@
+body{
+  margin:0;
+  background-color:#111;
+  font-family:Arial, Helvetica, sans-serif;
+  color:white;
+}
+
+h2{
+  margin-left:20px;
+}
+
+.row{
+  display:flex;
+  overflow-x:scroll;
+  padding:20px;
+}
+
+.row::-webkit-scrollbar{
+  display:none;
+}
+
+.moviePoster{
+  max-height:200px;
+  object-fit:contain;
+  margin-right:10px;
+  transition:transform 0.3s;
+}
+
+.moviePoster:hover{
+  transform:scale(1.1);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px){
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+
+  .moviePoster{
+    max-height:150px;
+  }
+
+  .row{
+    padding:10px;
+  }
+
+  input{
+    width:100%;
+  }
+
+}
